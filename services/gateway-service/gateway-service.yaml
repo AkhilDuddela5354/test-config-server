@@ -34,6 +34,13 @@ spring:
           predicates:
             - Path=/api/alerts/**
 
+        - id: alert-service-web
+          uri: ${ALERT_SERVICE_URL:http://localhost:8083}
+          predicates:
+            - Path=/alerts/**
+          filters:
+            - StripPrefix=1
+
 server:
   port: 8080
 
@@ -45,3 +52,5 @@ springdoc:
         url: /assets/v3/api-docs
       - name: Telemetry Service
         url: /telemetry/v3/api-docs
+      - name: Alert Service
+        url: /alerts/v3/api-docs

@@ -23,3 +23,10 @@ server:
 
 telemetry-service:
   url: ${TELEMETRY_SERVICE_URL:http://localhost:8082}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
